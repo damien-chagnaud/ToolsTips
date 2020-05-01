@@ -1,0 +1,90 @@
+0-prerequis:
+
+	- NodeJS
+	- yarn module
+
+
+1- create project:
+	
+	# npm init react-app [Proj Name]
+	# cd ./[Proj Name]
+	
+2- add module:
+
+	# yarn add react-router-dom
+	# yarn add react-bootstrap bootstrap
+	
+3- Style sheet:
+	
+	Voir https://react-bootstrap.github.io/getting-started/introduction#stylesheets
+	
+	dans le projet ./public/index.html Ajouter ligne 18 la ref css (comme indique dans la doc d'install) ->
+		l.17: <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+		l.18: <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  
+ 4- commencer le projet: Exemple 
+ 
+	----> Routage ./src/App.js:
+	
+	import React, { Component } from 'react';
+	import  { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+	import { Home } from './pages/Home';
+	import { ScanQR } from './pages/ScanQR';
+	import { Catalog } from './pages/Catalog';
+	import { About } from './pages/About';
+	import { NoMatch } from './pages/NoMatch';
+	import { Layout } from './components/Layout';
+	import logo from './logo.svg';
+	import './App.css';
+
+	class App extends Component {
+	  render(){
+		return(
+		  <React.fragment>
+			<Layout>
+			  <Router>
+				<Switch >
+				  <Route exact path="/" component={Home} />
+				  <Route exact path="/scan" component={ScanQR} />
+				  <Route exact path="/catalog" component={Catalog} />
+				  <Route exact path="/about" component={About} />
+				  <Route component={NoMatch} />
+				</Switch>
+			  </Router>
+			</Layout>
+		  </React.fragment>
+		)
+	  }
+	}
+	
+	----> Layout ./public/components/Layout.js :
+	
+	import React from 'react';
+	import { Container } from 'react-bootstrap';
+
+	export const Layout = (props) => {
+		<Container>
+			{props.children}
+		</Container>
+
+	}
+	
+	----> Pages ./public/pages/Home.js :
+	
+	export const Home = () => {
+		<div>
+			<h1>
+				Accueil
+			</h1>
+		</div>
+	}
+	
+	----> Pages ./public/pages/NoMatch.js :
+	
+		export const NoMatch = () => {
+		<div>
+			<h1>
+				Erreur 400
+			</h1>
+		</div>
+	}
