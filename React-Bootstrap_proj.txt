@@ -13,6 +13,7 @@
 
 	# yarn add react-router-dom
 	# yarn add react-bootstrap bootstrap
+	# yarn add styled-components
 	
 3- Style sheet:
 	
@@ -57,7 +58,7 @@
 	  }
 	}
 	
-	----> Layout ./public/components/Layout.js :
+	----> Layout ./src/components/Layout.js :
 	
 	import React from 'react';
 	import { Container } from 'react-bootstrap';
@@ -69,8 +70,9 @@
 
 	}
 	
-	----> Pages ./public/pages/Home.js :
-	
+	----> Pages ./src/pages/Home.js :
+	import React from 'react';
+
 	export const Home = () => {
 		<div>
 			<h1>
@@ -79,9 +81,11 @@
 		</div>
 	}
 	
-	----> Pages ./public/pages/NoMatch.js :
+	----> Pages ./src/pages/NoMatch.js :
 	
-		export const NoMatch = () => {
+	import React from 'react';
+
+	export const NoMatch = () => {
 		<div>
 			<h1>
 				Erreur 400
