@@ -1,0 +1,10 @@
+
+
+[[local|localrc]]
+ADMIN_PASSWORD=openstack
+DATABASE_PASSWORD=openstack
+RABBIT_PASSWORD=openstack
+SERVICE_PASSWORD=openstack
+GIT_BASE=https://git.openstack.org
+enable_plugin swift https://git.openstack.org/openstack/swift stable/stein
+enable_plugin keystone https://git.openstack.org/openstack/keystone stable/stein

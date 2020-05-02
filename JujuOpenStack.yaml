@@ -1,0 +1,59 @@
+﻿applications:
+  openstack-dashboard:
+    charm: 'cs:openstack-dashboard-302'
+    num_units: 1
+    series: xenial
+    annotations:
+      gui-x: 411
+      gui-y: 186
+    to:
+      - '0'
+  mysql:
+    charm: 'cs:mysql-58'
+    num_units: 1
+    series: xenial
+    annotations:
+      gui-x: -38.54047906398773
+      gui-y: 735.6321716308594
+    to:
+      - '0'
+  keystone:
+    charm: 'cs:keystone-312'
+    num_units: 1
+    series: xenial
+    annotations:
+      gui-x: 412.78656005859375
+      gui-y: 735.6275939941406
+    to:
+      - '0'
+  swift-proxy:
+    charm: 'cs:swift-proxy-91'
+    num_units: 1
+    series: xenial
+    annotations:
+      gui-x: 905.43017578125
+      gui-y: 740.9010925292969
+    to:
+      - '0'
+  swift-storage:
+    charm: 'cs:swift-storage-268'
+    num_units: 1
+    series: xenial
+    annotations:
+      gui-x: 1369.0445556640625
+      gui-y: 740.8965148925781
+    to:
+      - '0'
+relations:
+  - - 'keystone:identity-service'
+    - 'openstack-dashboard:identity-service'
+  - - 'swift-proxy:identity-service'
+    - 'keystone:identity-service'
+  - - 'swift-storage:swift-storage'
+    - 'swift-proxy:swift-storage'
+  - - 'mysql:shared-db'
+    - 'keystone:shared-db'
+machines:
+  '0':
+    series: xenial
+    constraints: cpu-cores=4 mem=4000 root-disk=50000
