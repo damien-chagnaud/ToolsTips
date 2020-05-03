@@ -1,4 +1,5 @@
-﻿applications:
+﻿bundle: openstack
+applications:
   openstack-dashboard:
     charm: 'cs:openstack-dashboard-302'
     num_units: 1
@@ -53,7 +54,3 @@ relations:
     - 'swift-proxy:swift-storage'
   - - 'mysql:shared-db'
     - 'keystone:shared-db'
-machines:
-  '0':
-    series: xenial
-    constraints: cpu-cores=4 mem=4000 root-disk=50000
