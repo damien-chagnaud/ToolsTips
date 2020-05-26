@@ -14,7 +14,9 @@
 	# yarn add react-router-dom
 	# yarn add react-bootstrap bootstrap
 	# yarn add styled-components
-	
+
+	SSL -> add "starts": "set HTTPS=true&&react-scripts start", to package.json->scripts
+	 
 3- Style sheet:
 	
 	Voir https://react-bootstrap.github.io/getting-started/introduction#stylesheets
