@@ -1,7 +1,8 @@
 ### Structure:
 ```Bash
  .
- |-- /ser/[SLIM 'Public' Path]
+ |-- .htaccess
+ |-- /serv/[SLIM 'Public' Path]
  |-- /app/[APP 'Public' Path]
 ```
  
