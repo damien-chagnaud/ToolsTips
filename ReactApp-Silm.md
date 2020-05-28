@@ -1,10 +1,12 @@
-Structure:
+### Structure:
  /
- |-> /
+ |-> /ser/[SLIM 'Public' Path]
+ |-> /app/[APP 'Public' Path]
  
  
+ ###HTACCESS
 
- .htaccess :````````
+````````
  <IfModule mod_rewrite.c>
   RewriteEngine on
 
@@ -14,7 +16,7 @@ Structure:
   RewriteBase / 
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_URI} !/api
-  RewriteRule ^ /aic_app/index.html [QSA]
+  RewriteRule ^ /app/index.html [QSA]
 
 </IfModule>
 ````
