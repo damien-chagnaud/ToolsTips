@@ -1,7 +1,9 @@
 ### Structure:
+```Bash
  .
- +-- /ser/[SLIM 'Public' Path]
- +-- /app/[APP 'Public' Path]
+ |-- /ser/[SLIM 'Public' Path]
+ |-- /app/[APP 'Public' Path]
+```
  
  
  ###HTACCESS
