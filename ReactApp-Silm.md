@@ -6,7 +6,7 @@
 ```
  
  
- ###HTACCESS
+ ### HTACCESS:
 
 ````````
  <IfModule mod_rewrite.c>
