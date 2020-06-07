@@ -19,7 +19,7 @@
   RewriteBase / 
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_URI} !/api
-  RewriteRule ^ /app/index.html [QSA]
+  RewriteRule ^ /index.html [QSA]
 
 </IfModule>
 ````````
